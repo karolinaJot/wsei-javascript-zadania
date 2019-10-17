@@ -1,5 +1,5 @@
 
-
+//zadanie 0
 const distFromAvarage = (arr) => {
     let avg;
     let sum = 0;
@@ -20,7 +20,15 @@ const distFromAvarage = (arr) => {
 
 distFromAvarage = [1,2,3,4,5];
 
-//zad1 -robiłam na zajęciach
+//zadadnie 1
+
+const fruits = ["jabłko", "gruszka", "truskawka", "śliwka"];
+console.log(fruits[0]);
+console.log(fruits[fruits.length - 1]);
+
+for (i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
 
 
 
@@ -64,7 +72,7 @@ function getEvenAvarage (array){
     }
 }
 
-getEvenAvarage([1,2,3,4,5,6,7,8,]);
+getEvenAvarage([1,2,3,4,5,6,7]);
 
 //zad6
 function sortArray(array){
@@ -74,3 +82,31 @@ function sortArray(array){
 }
 
 sortArray([145, 11, 3, 64, 4, 6, 10]);
+
+// zad7
+
+function addArrays(array1, array2){
+    const result = [];
+    let index = 0;
+    for (; index < array1.length; index++) {
+        if(index < array2.length){
+            result[index] = array1[index] + array2[index];
+        }
+        else{
+            result[index] = array1[index];
+        }
+    }
+    for(; index < array2.length; index++){
+        result[index] = array2[index];
+    }
+    
+    return result;
+}
+
+const arr1 = [8,3,22];
+const arr2 = [1,3,2];
+
+console.log(addArrays(arr1, arr2));
+
+
+

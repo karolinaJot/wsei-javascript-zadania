@@ -31,3 +31,11 @@ var animals = [
     }
 
 ]
+
+
+// NIE działa
+for (const item in animals) {
+        for(let i = 0; i < item.length; i++){
+            console.log(item[i]);
+        }
+}

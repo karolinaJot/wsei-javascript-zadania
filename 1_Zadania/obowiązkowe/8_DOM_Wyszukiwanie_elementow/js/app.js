@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let title = document.querySelector('.title');
     // console.log(title);
     function getDataAnimation(element){
-        let dataAnimationValue = element.dataset;
+        let dataAnimationValue = element.dataset.animation;
         return dataAnimationValue; 
     }
 

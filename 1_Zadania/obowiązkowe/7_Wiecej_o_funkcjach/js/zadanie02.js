@@ -10,5 +10,24 @@ callOtherFunction(function (a, b) {
     console.log("Pierwsza liczba:", a);
     console.log("Druga liczba", b)
     console.log("Wynik", a + b)
-})
+});
+
+callOtherFunction(function (a, b) {
+    console.log("Pierwsza liczba:", a);
+    console.log("Druga liczba", b)
+    console.log("Wynik", a - b)
+});
+callOtherFunction(function (a, b) {
+    console.log("Pierwsza liczba:", a);
+    console.log("Druga liczba", b)
+    console.log("Wynik", a * b)
+});
+callOtherFunction(function (a, b) {
+    console.log("Pierwsza liczba:", a);
+    console.log("Druga liczba", b)
+    console.log("Wynik", a / b)
+});
+
+//fukncję tesotwałam w oknie przeglądarki (Chrome) przy użyciu narzędzi dla deweloperów
+//zakładka Sources z kodem i breakpointy :)
 

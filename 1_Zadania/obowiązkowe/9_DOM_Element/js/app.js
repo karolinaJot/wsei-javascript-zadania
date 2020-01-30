@@ -56,7 +56,51 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // zadanie 3
-    
+    let footer = document.getElementById('mainFooter');
+    // console.log(mainFooter);
+
+    function getId(element){
+        return element.id;
+    }
+
+    // console.log(getId(footer));
+
+    // zadanie 4
+    function getTags(elements){
+        const tagNames = [];
+        for(let i = 0; i < childElements.length; i++){
+            tagNames.push(childElements[i].tagName);
+        }
+        return tagNames;
+    }
+    // console.log(getTags(childElements));
+
+    //zadanie 5
+    function getClassInfo(element){
+        const bannerClasses = [];
+        for (const item of element.classList) {
+            bannerClasses.push(item);
+        }
+        return bannerClasses;
+    }
+
+    // console.log(getClassInfo(banner));
+
+    // zadanie 6
+    let navigation = document.querySelectorAll('nav li');
+    // console.log(navigation);
+    function setDataDirection(elements){
+        for(let i = 0; i < elements.length; i++){
+            if(!elements[i].hasAttribute('data-direction'))
+            {
+                elements[i].setAttribute('data-direction', 'top');
+            }
+        }
+    }
+    // setDataDirection(navigation);
+    // for(let i = 0; i < navigation.length; i++){
+    // console.log(navigation[i].getAttribute('data-direction'));
+    // }
 
     
 });

@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     innerFuncOne();
 
+    //Opdowiedź: w celu użycia elementu o id b należy przekazać ten element funkcji jako parametr
+    //wtedy wewnątrz fukncji będzie można wykonać jakieś działania na tym elemencie, np. zmiana koloru
+
   });
 
 })

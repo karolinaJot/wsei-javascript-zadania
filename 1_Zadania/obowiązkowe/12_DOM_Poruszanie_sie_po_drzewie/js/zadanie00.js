@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let forth = document.querySelector('.forth'); 
     let forthParent = forth.parentElement;
     let article = forthParent.querySelector('article');
-    console.log(article);
+    let p = article.querySelectorAll('p')[1];
+    console.log(p);
     
 
 

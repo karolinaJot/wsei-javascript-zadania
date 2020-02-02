@@ -2,32 +2,31 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM fully loaded and parsed!"); 
 
     let select = document.querySelector('select');
-    let button = document.querySelector('btn');
+    let options = document.querySelectorAll('option');
     let images = document.querySelectorAll('.page-header img');
 
-    for(let i = 0; i < images.length; i++){
+    function ClearImgs(allImgs){
+        for(let i = 0; i < images.length; i++){
             images[i].style.display = 'none';
         }
+    }
+
+    ClearImgs(images);
+
+    images[2].style.display = 'block';
     
     select.addEventListener('change', function(e){
-        let index = select.selectedIndex;
-        for(let i = 0; i < images.length; i++){
-            if(i === index){
-                images[i].style.display = 'block';
-            }else {
-                images[i].style.display = 'none';
+        ClearImgs(images);
+        for(let i = 0; i < options.length; i ++){
+            if(options[i].selected){
+                if(options[i].innerHTML === 'Windows'){
+                    images[2].style.display = 'block';
+                } else if(options[i].innerHTML === 'Os X'){
+                    images[0].style.display = 'block';
+                } else if(options[i].innerHTML === 'Ubuntu'){
+                    images[1].style.display = 'block';
+                }
             }
         }
     });
-    
-    // for(let i = 0 ; i < options.length; i++){
-    //     options[i].addEventListener('change', function(e){
-    //         if(this.selected){
-    //             console.log(`wybrano ${options[i]}`);
-    //             images[i].style.display = 'block';
-    //         }
-    //     });
-    // }
-   
-
 });

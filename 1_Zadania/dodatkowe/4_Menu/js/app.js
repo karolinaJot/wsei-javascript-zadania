@@ -18,7 +18,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.children[0].style.display = 'none';
             }
         });
-
     }
-
 });

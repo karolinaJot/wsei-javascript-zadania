@@ -26,12 +26,16 @@ document.addEventListener("DOMContentLoaded", function () {
             body.appendChild(newDiv);
             newDiv.appendChild(newImg);
             newDiv.appendChild(button);
+
+            let toRemove = document.querySelector('.fullScreen');
+            let closeButton = document.querySelector('.close');
+            
+            closeButton.addEventListener('click', function(e){
+                toRemove.parentElement.removeChild(toRemove);
+            });
+
+
         });
     }
 
-    let toRemove = document.querySelector('.fullScreen');
-    
-    button.addEventListener('click', function(e){
-        toRemove.parentNode.removeChild(toRemove);
-    });
 });

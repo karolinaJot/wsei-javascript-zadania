@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             newH1.innerHTML = task;
             let deleteBtn = document.createElement('button');
             deleteBtn.innerHTML = 'Delete';
+            deleteBtn.className = 'deleteBtn';
             let completeBtn = document.createElement('button');
             completeBtn.innerHTML = 'Complete';
             completeBtn.className = 'completeBtn'
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             counter.innerHTML = index;
 
             completeBtn.addEventListener('click', function (e) {
-                let h1 = this.previousElementSibling;
+                let h1 = completeBtn.previousElementSibling;
                 h1.classList.toggle('complete');
                 if (h1.className === 'complete') {
                     counter.innerHTML = --index;
@@ -39,11 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     counter.innerHTML = ++index;
                 }
             });
-
+        
             deleteBtn.addEventListener('click', function (e) {
-                let h1 = this.previousElementSibling;
+                let h1 = deleteBtn.previousElementSibling.previousElementSibling;
                 let toRemove = this.parentElement;
-                if (!h1.classList.length !== 0) {
+                if (h1.classList.length === 0) {
                     counter.innerHTML = --index;
                 }
                 toRemove.parentElement.removeChild(toRemove);
@@ -51,9 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             taskInput.value = '';
         }
-
-
     });
+
 
     removeTasksButton.addEventListener('click', function (e) {
         let completeTasks = document.querySelectorAll('.complete');

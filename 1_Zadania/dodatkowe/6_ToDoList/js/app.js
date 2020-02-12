@@ -6,30 +6,45 @@ document.addEventListener('DOMContentLoaded', function () {
     let tasksList = document.getElementById('taskList');
     let removeTasksButton = document.getElementById('removeFinishedTasksButton');
     let counter = document.getElementById('counter');
+    let taskPriority = document.getElementById('taskPriority');
     // console.log(tasksListItems);
 
     let index = 0;
+    let tasksArray = [];
 
     button.addEventListener('click', function (e) {
         if (taskInput.value.length > 5 && taskInput.value.length < 100) {
             let task = taskInput.value;
+            if(taskPriority.value < 1 || taskPriority.value > 10){
+                taskPriority.value = '';
+            }else{
+                let priority = taskPriority.value;
+            }
             let newLi = document.createElement('li');
             let newH1 = document.createElement('h1');
             newH1.innerHTML = task;
             let deleteBtn = document.createElement('button');
             deleteBtn.innerHTML = 'Delete';
-            deleteBtn.className = 'deleteBtn';
+            // deleteBtn.className = 'deleteBtn';
             let completeBtn = document.createElement('button');
             completeBtn.innerHTML = 'Complete';
-            completeBtn.className = 'completeBtn'
+            // completeBtn.className = 'completeBtn'
 
             newLi.appendChild(newH1);
             newLi.appendChild(completeBtn);
             newLi.appendChild(deleteBtn);
+            tasksArray.push(newLi);
             tasksList.appendChild(newLi);
             taskInput.value = '';
             index++;
             counter.innerHTML = index;
+            console.log(tasksArray);
+
+
+
+
+
+
 
             completeBtn.addEventListener('click', function (e) {
                 let h1 = completeBtn.previousElementSibling;
@@ -52,6 +67,9 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             taskInput.value = '';
         }
+
+
+
     });
 
 

@@ -32,3 +32,25 @@ var planets = [
         numberOfMoons: 13
     }
 ];
+
+function sortPlanet(planets) {
+    let sortedPlanets = [];
+    function compare(a, b) {
+        const numberA = a.numberOfMoons;
+        const numberB = b.numberOfMoons;
+
+        let comparison = 0;
+        if (numberA > numberB) {
+            comparison = 1;
+        } else if (numberA < numberB) {
+            comparison = - 1;
+        }
+        return comparison * -1;
+    }
+
+    sortedPlanets = planets.sort(compare);
+    return sortedPlanets;
+}
+
+console.log(sortPlanet(planets));
+
